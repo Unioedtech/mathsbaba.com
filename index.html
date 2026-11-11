@@ -202,6 +202,11 @@ section{position:relative;padding-block:clamp(80px,10vw,140px)}
 .prog li::before{content:"";width:7px;height:7px;flex:none;margin-top:9px;border-radius:50%;background:var(--red)}
 
 /* results */
+.ranks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:14px}
+.rank{display:flex;align-items:center;gap:20px;padding:20px 22px;border-radius:18px;background:var(--panel);border:1px solid color-mix(in srgb,var(--red) 45%,transparent)}
+.rank img{flex:none;width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--red)}
+.rank b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(34px,3.2vw,46px);letter-spacing:-.04em;line-height:1;color:var(--red)}
+.rank .nm{display:block;font-weight:600;font-size:17px;margin:6px 0 2px}
 .res-top{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .res{margin:0;border-radius:18px;overflow:hidden;background:var(--panel);border:1px solid var(--line-2)}
 .res .ph{aspect-ratio:5/4;background:#222}
@@ -476,13 +481,18 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);padding-bloc
       <h2 class="h2">School toppers. Record ranks. <span class="r">100 on 100s.</span></h2>
       <p class="lead">We produce results year after year.</p>
     </div>
+    <div class="ranks">
+      <div class="rank rv"><img src="assets/r/vrinda.jpg" width="192" height="192" alt="Vrinda"><div><b>AIR 1</b><span class="nm">Vrinda</span><span class="cap">CBSE · 99.8%</span></div></div>
+      <div class="rank rv"><img src="assets/r/aarav.jpg" width="192" height="192" alt="Aarav"><div><b>AIR 2</b><span class="nm">Aarav</span><span class="cap">MHT CET</span></div></div>
+      <div class="rank rv"><img src="assets/r/aarul.jpg" width="192" height="192" alt="Aarul"><div><b>AIR 3</b><span class="nm">Aarul</span><span class="cap">CBSE · 99.4%</span></div></div>
+    </div>
     <div class="res-top">
       <figure class="res rv"><div class="ph"><img src="assets/results-daksh.jpg" width="640" height="640" alt="Daksh Gupta"></div><figcaption><b>100/100</b><span class="nm">Daksh Gupta</span><span class="cap">Maths, 2025</span></figcaption></figure>
       <figure class="res rv"><div class="ph"><img src="assets/results-vanisha.jpg" width="640" height="637" alt="Vanisha receiving a trophy from Ankit Mahajan"></div><figcaption><b>100/100</b><span class="nm">Vanisha</span><span class="cap">Class 10 maths</span></figcaption></figure>
       <figure class="res rv"><div class="ph"><img src="assets/results-ishita.jpg" width="640" height="640" alt="Ishita with Ankit Mahajan"></div><figcaption><b>100/100</b><span class="nm">Ishita</span><span class="cap">Maths</span></figcaption></figure>
-      <figure class="res rv"><div class="ph"><img src="assets/results-kimaya.jpg" width="640" height="640" alt="Kimaya Agarwal with Ankit Mahajan" style="object-position:30% 20%"></div><figcaption><b>98.6%</b><span class="nm">Kimaya Agarwal</span><span class="cap">Class 12, 2025 · Panchkula topper · 3rd in Tricity</span></figcaption></figure>
+      <figure class="res rv"><div class="ph"><img src="assets/results-kimaya.jpg" width="640" height="640" alt="Kimaya Agarwal with Ankit Mahajan" style="object-position:30% 20%"></div><figcaption><b>98.6%</b><span class="nm">Kimaya Agarwal</span><span class="cap">Class 12, 2025 · 3rd in Tricity · Panchkula topper</span></figcaption></figure>
       <figure class="res rv"><div class="ph"><img src="assets/results-shaurya.jpg" width="640" height="640" alt="Shaurya"></div><figcaption><b>98.6%</b><span class="nm">Shaurya</span><span class="cap">Class 12 · Topper, Bhavan Vidyalaya Chandigarh</span></figcaption></figure>
-      <figure class="res rv"><div class="ph"><img src="assets/results-trisha.jpg" width="640" height="640" alt="Trisha Bansal with Ankit Mahajan"></div><figcaption><b>98%</b><span class="nm">Trisha Bansal</span><span class="cap">Class 12 · Maths 98 · Into LSE, London, and 4 more universities abroad</span></figcaption></figure>
+      <figure class="res rv"><div class="ph"><img src="assets/results-trisha.jpg" width="640" height="640" alt="Trisha Bansal with Ankit Mahajan"></div><figcaption><b>98%</b><span class="nm">Trisha Bansal</span><span class="cap">Class 12, 2026 · 3rd in Tricity · Now at LSE, London</span></figcaption></figure>
     </div>
     <details class="more rv">
       <summary><span class="faces" aria-hidden="true"><img src="assets/r/rakshit.jpg" width="128" height="128" alt=""><img src="assets/r/arjun-gupta.jpg" width="128" height="128" alt=""><img src="assets/r/akshita.jpg" width="128" height="128" alt=""><img src="assets/r/shlok-kabiraj.jpg" width="128" height="128" alt=""><img src="assets/r/yashika.jpg" width="128" height="128" alt=""><img src="assets/r/tanish-dev-kochhar.jpg" width="128" height="128" alt=""></span><span class="more-t"><b>And many, many more</b></span><span class="plus" aria-hidden="true">+</span></summary>
