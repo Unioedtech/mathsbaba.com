@@ -119,19 +119,9 @@ section{position:relative;padding-block:clamp(80px,10vw,140px)}
 .baba{width:clamp(96px,15vw,208px);height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,.14))}
 .board .est{position:absolute;right:16px;bottom:12px;z-index:1;color:#8B9098}
 .mast-row{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,60px);align-items:end;margin-top:clamp(28px,4vw,52px)}
-.motto{font-family:var(--display);font-weight:800;font-size:clamp(30px,6vw,46px);letter-spacing:-.025em;line-height:1.08;color:#fff}
+.motto{font-family:var(--display);font-weight:800;font-size:clamp(26px,3vw,42px);letter-spacing:-.025em;line-height:1.08;color:#fff}
 .motto .r{color:var(--red)}
 .motto .nw{white-space:nowrap}
-/* desktop: the two CTAs stack and span exactly from the cap of "Beyond" to the baseline of "Success." */
-@media (min-width:1025px){
-  .mast-row{grid-template-columns:1fr auto;grid-template-areas:"m c" "s .";align-items:stretch;row-gap:0}
-  .mtxt{display:contents}
-  .motto{grid-area:m;font-size:clamp(30px,4.6vw,60px);text-box:trim-both cap alphabetic}
-  .mtxt .cap{grid-area:s}
-  .mast-row .ctas{grid-area:c;display:grid;grid-template-rows:1fr 1fr;gap:10px}
-  .mast-row .ctas .btn{justify-content:space-between;padding:0 6px 0 22px}
-  .mast-row .ctas .btn .ic{width:30px;height:30px}
-}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
 .mast .btn-ghost{border-color:rgba(255,255,255,.32);color:#fff}
 .mast .btn-ghost .ic{background:rgba(255,255,255,.1)}
@@ -383,7 +373,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);padding-bloc
       <span class="est cap">Est. 2010 · Sector 15, Panchkula</span>
     </div>
     <div class="mast-row">
-      <div class="mtxt"><p class="motto"><span class="nw">Beyond Marks.</span> <span class="nw">Beyond Stress.</span><br><span class="r">Towards Success.</span></p><p class="cap" style="margin-top:22px">Maths · Classes 6 to 12 · CBSE and ICSE</p></div>
+      <div class="mtxt"><p class="motto"><span class="nw">Beyond Marks.</span> <span class="nw">Beyond Stress.</span><br><span class="r">Towards Success.</span></p><p class="cap" style="margin-top:14px">Maths · Classes 6 to 12 · CBSE and ICSE</p></div>
       <div class="ctas">
         <a class="btn btn-red" href="#contact">Book a free demo class <span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
         <a class="btn btn-ghost" href="tel:+917657870107">Call 76578 70107 <span class="ic"><svg><use href="#i-call"/></svg></span></a>
