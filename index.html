@@ -38,7 +38,7 @@
   --panel:#161618; --panel-2:#1F1F22; --red:#E4383E; --red-deep:#F0555A; --red-soft:rgba(228,56,62,.2)}
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -72,25 +72,24 @@ section{position:relative;padding-block:clamp(80px,10vw,140px)}
 .btn-ghost{border:1px solid var(--line-3);color:var(--ink)}
 .btn-ghost .ic{background:var(--line)}
 .btn-ghost:hover{border-color:var(--ink)}
-.btn-ink{background:var(--ink);color:var(--white)}
-.btn-ink .ic{background:rgba(255,255,255,.14)}
-.dark .btn-ink{color:var(--black)}
-.dark .btn-ink .ic{background:rgba(0,0,0,.1)}
-.btn-sm{padding:7px 7px 7px 18px;font-size:14px}
-.btn-sm .ic{width:30px;height:30px}
 
 /* header: the black frame of the board */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:14px;height:66px}
+.top.dark{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:0;right:0;z-index:40;background:none;pointer-events:none}
+.top .wrap{pointer-events:auto;display:flex;align-items:center;gap:10px;height:60px;width:min(1180px,calc(100% - 24px));padding:0 8px 0 16px;border-radius:999px;background:rgba(11,11,12,.86);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.top .brand{flex:1;margin:0}
+.hpill{display:inline-flex;align-items:center;height:42px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.3);font-size:14px;font-weight:600;color:#fff;white-space:nowrap;transition:background .5s var(--ease),border-color .5s var(--ease)}
+.hpill:hover{border-color:#fff}
+.hpill.red{background:var(--red);border-color:var(--red)}
+.hpill.red:hover{background:var(--red-deep);border-color:var(--red-deep)}
 .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
 .brand img{height:36px;width:auto;filter:invert(1)}
 .brand b{font-family:var(--display);font-weight:900;font-size:17px;letter-spacing:-.02em;line-height:1;white-space:nowrap;display:block}
 .brand b i{font-style:normal;color:var(--red)}
 .brand small{display:block;font-size:9.5px;color:var(--dim);margin-top:4px}
-.nav-links{display:flex;gap:2px;margin-right:10px}
+.nav-links{display:flex;gap:2px}
 .nav-links a{padding:8px 13px;border-radius:999px;font-size:14px;font-weight:500;color:var(--muted);transition:color .5s var(--ease),background .5s var(--ease)}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
-.nav-cta{display:flex;gap:6px;align-items:center}
+.nav-cta{flex:1;display:flex;gap:6px;align-items:center;justify-content:flex-end}
 .burger{display:none;width:42px;height:42px;border-radius:50%;position:relative;border:1px solid var(--line-2)}
 .burger span{position:absolute;left:12px;width:18px;height:1.5px;background:#fff;transition:transform .6s var(--ease),top .6s var(--ease)}
 .burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:24px}
@@ -104,7 +103,7 @@ section{position:relative;padding-block:clamp(80px,10vw,140px)}
 .sheet a.minor{font-size:18px;font-family:var(--body);font-weight:600;color:var(--red);margin-top:18px}
 
 /* masthead: the living signboard */
-.mast{padding-block:clamp(26px,4vw,56px) 0;overflow:hidden}
+.mast{padding-block:calc(84px + clamp(26px,4vw,56px)) 0;overflow:hidden}
 .tag{display:flex;justify-content:center;flex-wrap:wrap;gap:0 .55em;margin:0 0 clamp(16px,2.4vw,28px);font-size:clamp(13px,1.6vw,20px);letter-spacing:.2em;color:#fff;line-height:1}
 .tag .w{display:inline-block;overflow:hidden;padding:.12em 0}
 .tag .w span{display:inline-block;transform:translateY(115%)}
@@ -147,7 +146,7 @@ section{position:relative;padding-block:clamp(80px,10vw,140px)}
 /* why: a numbered list beside the classroom */
 #why::before{content:"";position:absolute;inset:0;background:url(assets/doodles.png) 50% 0/1100px auto repeat;opacity:.055;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000,transparent 55%);mask-image:linear-gradient(180deg,#000,transparent 55%)}
 .why{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(40px,7vw,110px);align-items:start}
-.why-l{position:sticky;top:calc(66px + 28px + env(safe-area-inset-top,0px));display:grid;gap:18px;justify-items:start}
+.why-l{position:sticky;top:calc(96px + env(safe-area-inset-top,0px));display:grid;gap:18px;justify-items:start}
 .why-l figure{margin:18px 0 0;width:100%}
 .why-l .ph{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#ddd}
 .why-l .ph img{width:100%;height:100%;object-fit:cover;object-position:40% 40%;filter:grayscale(1) contrast(1.04)}
@@ -275,7 +274,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);padding-bloc
 
 @media (max-width:1024px){
   .nav-links{display:none}.burger{display:block}
-  .nav-cta .btn-ghost{display:none}
+  .nav-cta .hpill:not(.red){display:none}
   .why,.teacher,.contact-grid{grid-template-columns:1fr}
   .why-l{position:static}
   .why-l .h2{font-size:min(clamp(38px,5.2vw,68px),calc((100vw - 44px) / 10.6))}
@@ -335,26 +334,24 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);padding-bloc
       <span><b>Maths <i>Baba</i> Classes</b><small class="cond">by Ankit Mahajan · Panchkula</small></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#why">Why Maths Baba</a>
-      <a href="#classes">Classes</a>
+      <a href="#why">Why Us</a>
+      <a href="#classes">Batches</a>
       <a href="#results">Results</a>
-      <a href="#teacher">Teacher</a>
-      <a href="#app">Portal</a>
+      <a href="#teacher">Founder</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost btn-sm" href="#contact">Contact us <span class="ic"><svg><use href="#i-chat"/></svg></span></a>
-      <a class="btn btn-red btn-sm" href="https://mathsbaba.staging.unioedtech.com" rel="noopener">Login <span class="ic"><svg><use href="#i-arrow"/></svg></span></a>
+      <a class="hpill" href="#contact">Contact Us</a>
+      <a class="hpill red" href="https://mathsbaba.staging.unioedtech.com" rel="noopener">Login</a>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Menu"><span></span><span></span></button>
     </div>
   </div>
 </header>
 <div class="sheet" id="sheet">
-  <a href="#why">Why Maths Baba</a>
-  <a href="#classes">Classes</a>
+  <a href="#why">Why Us</a>
+  <a href="#classes">Batches</a>
   <a href="#results">Results</a>
-  <a href="#teacher">Teacher</a>
-  <a href="#app">Portal</a>
-  <a href="#contact" class="minor">Contact us</a>
+  <a href="#teacher">Founder</a>
+  <a href="#contact" class="minor">Contact Us</a>
   <a href="https://mathsbaba.staging.unioedtech.com" class="minor" rel="noopener">Student &amp; parent login ↗</a>
 </div>
 
@@ -624,7 +621,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--line);padding-bloc
   <div class="wrap foot">
     <a class="brand" href="#top" aria-label="Maths Baba Classes"><img src="assets/baba.png" width="594" height="868" alt=""><span><b>Maths <i>Baba</i> Classes</b><small class="cond">Bright future begins here</small></span></a>
     <nav aria-label="Footer">
-      <a href="#why">Why Maths Baba</a><a href="#classes">Classes</a><a href="#results">Results</a><a href="#teacher">Teacher</a><a href="#app">Portal</a><a href="#contact">Contact us</a><a href="https://mathsbaba.staging.unioedtech.com" rel="noopener">Login ↗</a>
+      <a href="#why">Why Us</a><a href="#classes">Batches</a><a href="#results">Results</a><a href="#teacher">Founder</a><a href="#app">Portal</a><a href="#contact">Contact Us</a><a href="https://mathsbaba.staging.unioedtech.com" rel="noopener">Login ↗</a>
     </nav>
     <div class="fine">
       <span>© <span id="yr">2026</span> Maths Baba Classes, SCO 12, Sector 15, Panchkula.</span>
